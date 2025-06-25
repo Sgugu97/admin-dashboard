@@ -2,16 +2,15 @@ html,
 body{
     box-sizing: border-box;
     margin: 0;
-    font-size: 50px;
+    font-size: 20px;
     font-weight: bold;
 }
 *,::before,::after{
-    border: 1px solid;
     list-style: none;
 }
 .container{
     display: grid;
-    grid-template-columns: 1fr fr;
+    grid-template-columns: 1fr 5fr;
     grid-template-rows: 1fr 4fr;
 }
 
@@ -19,51 +18,103 @@ body{
 
 .menu{
    grid-row: 1/3;
-   display: grid;
-   grid-template-rows: 1fr 2fr 2fr;
-   padding: 20px;
+   display: flex;
+   flex-direction: column;
+   background-color: #1AA3D9;
+   color: #FFFFFF;
 }
 .menu>*{
-    font-size: 20px;
+    margin-top: 50px;
     display: grid;
     gap: 10px;
+    justify-content: space-between;
+}
+.settings>*,
+.navigation>*{
+    display: flex;
+}
+.settings>*>*,
+.navigation>*>*{
+    margin-right: 20px;
 }
 
 
-
+.search{
+    background: none;
+	color: inherit;
+	border: none;
+	cursor: pointer;
+    align-self: center;
+    justify-self: center;
+}
 .header{
-    position: relative;
     box-shadow: 0px 10px 10px 0px rgb(0,0,0,0.5);
     grid-column: 2/3;
     display: grid;
     grid-template-columns: 5fr 3fr;
+    grid-template-rows: 3fr 5fr;
     gap: 10px;
 }
-.buttons{
+.header>*{
+    border: 1px solid black;
+}
+.search-bar{
     display: grid;
-    grid-template-columns: repeat(3,1fr);
-    gap: 10px;
+    grid-template-columns: 1fr 7fr;
+}
+input{
+    grid-column: 2/3;
+    border-radius: 20px;
+    margin: 10px;
+    background-color: #E2E8F0;
+}
+.buttons{
+    display: flex;
+    flex:1;
 }
 .buttons>button{
     border-radius: 20px;
-    font-size: 30px;
+    align-self: center;
+    padding: 10px;
+    padding-inline: 25px;
+    margin: 10px;
+    background-color: #1AA3D9;
+    color: #FFFFFF;
+    border: none;
+}
+button:hover{
+    background-color: #FFFFFF;
+    color: #1AA3D9;
+    border: 1px solid #1AA3D9;
 }
 
 
 
+.main>*{
+    border: 1px solid black;
+}
 .main{
     display: grid;
-    grid-template-columns: 4fr 1fr;
+    grid-template-columns: 4fr 2fr;
+    background-color: #E2E8F0;
 }
 .projects{
+    margin-top: 20px;
     display: grid;
     grid-template: 1fr 1fr 1fr/1fr 1fr;
     gap: 20px;
     padding: 20px;
 }
+.card{
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid black;
+    background-color: #FFFFFF;
+}
 .side{
-    display: grid;
-    grid-template-rows: 1fr 1fr;
-    gap: 20px;
     padding: 20px;
+}
+.side>*{
+    border: 1px solid black;
+    background-color: #FFFFFF;
 }
